@@ -9,38 +9,59 @@ namespace Notes
 {
     internal class Note
     {
-        string path;
-        string file;
-
-        public void Show(string path)
+        public void Create(string nm, string pt)
         {
-            this.path = path;
-            file = File.ReadAllText(this.path);
-            Console.WriteLine(file);
-        }
+            var fullName = pt + @"\" + nm;
 
-        public void Write()
-        {
-            string text;
-
-            if (!(file == null || file == ""))
+            if (!File.Exists(fullName))
             {
-                Show(@"C:\Users\user\Desktop\test.txt");
-                text = file + "\n";
-                text += Convert.ToString(Console.ReadLine());
+                File.Create(fullName);
+                Console.WriteLine("Sucesso! O arquivo {0} foi criado no diretório \"{1}\"!", nm, pt);
             }
             else
             {
-                Console.Write("> ");
-                text = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Um arquivo com esse nome já existe no diretório indicado!");
             }
+        }
 
-            if (text.Contains("  "))
+        public void Delete(string nm, string pt)
+        {
+            var fullName = pt + @"\" + nm;
+
+            if (File.Exists(fullName))
             {
-                text.Replace("  ", "\n");
-            }
+                Console.WriteLine("Você deseja apagar o arquivo {0}, localizado em \"{1}\".", nm, pt);
+                Console.Write("Tem certeza? (Y/N)\n> ");
+                var conf = Console.ReadLine();
 
-            File.WriteAllText(path, text);
+                if ((conf.ToLower().Equals("y")))
+                {
+                    File.Delete(fullName);
+                    Console.WriteLine("Sucesso! O arquivo {1} foi removido do diretório \"{1}\"!", nm, pt);
+                }
+                else
+                {
+                    Console.WriteLine("Nenhum arquivo foi apagado!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Não existe nenhum arquivo {0} localizado em \"{1}\"...", nm, pt);
+            }
+        }
+
+        public void Modify(string nm, string pt)
+        {
+            var fullName = pt + @"\" + nm;
+
+            if (File.Exists(fullName))
+            {
+                
+            }
+            else
+            {
+                Console.WriteLine("Não existe nenhum arquivo {0} localizado em \"{1}\"...", nm, pt);
+            }
         }
     }
 }
