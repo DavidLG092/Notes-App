@@ -1,0 +1,27 @@
+Notes:
+
+Funcionamento:
+
+- Diretórios:
+	- Automaticamente cria diretórios organizados por data;
+	- Permite a alteração do nome dos diretórios;
+	- Permite a criação de diretórios;
+	- Permite a exclusão de diretórios;
+- Notas:
+	- Cria notas nomeadas pelo usuário;
+	- Permite a alteração do nome da nota;
+	- Permite mover notas de um lugar para outro;
+	- Permite reescrever as notas ou adicionar texto;
+
+Menu:
+
+- Exibe o diretório atual e o os arquivos dentro dele;
+- Opções para o diretório:
+	- Criar novo;
+	- Renomear;
+	- Deletar;
+- Ao selecionar um arquivo:
+	- Criar novo;
+	- Renomear;
+	- Mover;
+	- Deletar;

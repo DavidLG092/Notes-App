@@ -1,0 +1,8 @@
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes\Notes\bin\Debug\Notes.exe.config
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes\Notes\bin\Debug\Notes.exe
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes\Notes\bin\Debug\Notes.pdb
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes\Notes\obj\Debug\Notes.csproj.AssemblyReference.cache
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes\Notes\obj\Debug\Notes.csproj.SuggestedBindingRedirects.cache
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes\Notes\obj\Debug\Notes.csproj.CoreCompileInputs.cache
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes\Notes\obj\Debug\Notes.exe
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes\Notes\obj\Debug\Notes.pdb

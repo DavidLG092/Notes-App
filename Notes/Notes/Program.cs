@@ -10,6 +10,9 @@ namespace Notes
     {
         static void Main(string[] args)
         {
+            Note note = new Note();
+            note.Write();
+            Console.ReadLine();
         }
     }
 }
