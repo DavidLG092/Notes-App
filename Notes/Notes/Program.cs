@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Notes
 {
@@ -10,8 +11,8 @@ namespace Notes
     {
         static void Main(string[] args)
         {
-            Note note = new Note();
-            Console.Write("Hi");
+            Folder f = new Folder();
+            f.Delete();
             Console.ReadLine();
         }
     }
