@@ -48,9 +48,12 @@ namespace Notes
 
         public void Modify(string nm)
         {
+            string fileText;
+
             if (File.Exists(nm))
             {
-                
+                fileText = File.ReadAllText(nm);
+                Console.WriteLine(fileText);
             }
             else
             {

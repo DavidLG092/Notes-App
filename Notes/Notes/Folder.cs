@@ -9,17 +9,25 @@ namespace Notes
 {
     internal class Folder
     {
+        // Variáveis de diretório
         private static string mainPath;
         private static string currentPath;
         private static string date;
 
+        // Variáveis de arquivo
+        private Note n;
+        private static string fileName;
+
         public Folder()
         {
             mainPath = System.Environment.CurrentDirectory + @"\Notes\";
+            currentPath = mainPath;
             date = System.DateTime.Today.ToString("d").Replace("/", "_");
         }
 
-        public void Create(string nm = null)
+        // Métodos de diretório
+
+        public void CreateDirectory(string nm = null)
         {
             if (nm == null || nm == "")
             {
@@ -41,7 +49,7 @@ namespace Notes
             }
         }
 
-        public void Delete(string nm = null)
+        public void Deleteirectory(string nm = null)
         {
             if (nm == null || nm == "")
             {
@@ -87,6 +95,56 @@ namespace Notes
                 Console.WriteLine("{0} - {1}", i, file.Name.Remove(file.Name.ToString().IndexOf("."), 4));
                 i++;
             }
+        }
+
+        // Métodos de arquivos
+
+        public void CreateFile(string nm)
+        {
+            n = new Note();
+
+            if (nm == null || nm == "")
+            {
+                fileName = currentPath + date;
+            }
+            else
+            {
+                fileName = currentPath + nm;
+            }
+
+            n.Create(fileName);
+        }
+
+        public void DeleteFile(string nm)
+        {
+            n = new Note();
+
+            if (nm == null || nm == "")
+            {
+                fileName = currentPath + date;
+            }
+            else
+            {
+                fileName = currentPath + nm;
+            }
+
+            n.Delete(fileName);
+        }
+
+        public void ModifyFile(string nm)
+        {
+            n = new Note();
+
+            if (nm == null || nm == "")
+            {
+                fileName = currentPath + date;
+            }
+            else
+            {
+                fileName = currentPath + nm;
+            }
+
+            n.Modify(fileName);
         }
 
     }
