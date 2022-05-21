@@ -62,5 +62,32 @@ namespace Notes
                 }
             }
         }
+
+        public void MoveToDirectory(string nm)
+        {
+            currentPath = mainPath + nm;
+
+            if (!Directory.Exists(currentPath))
+            {
+                Console.WriteLine("O diretório informado não existe. Garanta que o nome tenha sido digitado corretamente.");
+            }
+            else
+            {
+                ListDirectory(currentPath);
+            }
+        }
+
+        private void ListDirectory(string nm)
+        {
+            DirectoryInfo dir = new DirectoryInfo(nm);
+            int i = 1;
+
+            foreach (FileInfo file in dir.GetFiles())
+            {
+                Console.WriteLine("{0} - {1}", i, file.Name.Remove(file.Name.ToString().IndexOf("."), 4));
+                i++;
+            }
+        }
+
     }
 }

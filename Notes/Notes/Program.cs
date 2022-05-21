@@ -12,7 +12,7 @@ namespace Notes
         static void Main(string[] args)
         {
             Folder f = new Folder();
-            f.Delete();
+            f.MoveToDirectory("Teste");
             Console.ReadLine();
         }
     }
