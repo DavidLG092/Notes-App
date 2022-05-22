@@ -140,13 +140,21 @@ namespace Notes_Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string content;
+            string content = "";
 
             file = currentPath + @"\" + txtFile.Text + ".txt";
 
             if (File.Exists(file))
             {
-                content = File.ReadAllText(file);
+                try
+                {
+                    content = File.ReadAllText(file);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Algo de errado ocorreu. Tente novamente mais tarde.", "Edição de arquivo");
+                }
+
                 txtContent.Text = content;
             }
             else
