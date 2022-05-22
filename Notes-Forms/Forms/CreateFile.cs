@@ -33,10 +33,12 @@ namespace Notes_Forms.Forms
             if (!File.Exists(fullName))
             {
                 File.Create(fullName);
+                MessageBox.Show("Sucesso! Arquivo \"" + txtFileName.Text + "\" foi criado!", "Criação de arquivo");
+                Close();
             }
             else
             {
-                MessageBox.Show("Não foi possível criar o arquivo desejado, porque um arquivo de mesmo nome já existe!");
+                MessageBox.Show("Não foi possível criar o arquivo desejado, porque um arquivo de mesmo nome já existe!", "Criação de arquivo");
             }
         }
 

@@ -9,3 +9,4 @@ D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\bin\Debug\Notes-F
 D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\bin\Debug\Notes-Forms.pdb
 D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes-Forms.exe
 D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes-Forms.pdb
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes_Forms.Forms.CreateFile.resources

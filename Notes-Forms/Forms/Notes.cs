@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Notes_Forms.Forms;
 
 namespace Notes_Forms
 {
     public partial class Notes : Form
     {
+        private static CreateFile form;
 
         private static string mainPath;
         private static string currentPath;
@@ -83,11 +85,11 @@ namespace Notes_Forms
         {
             if (folderDiag.ShowDialog() == DialogResult.OK)
             {
-                dir = new DirectoryInfo(folderDiag.SelectedPath);
+                currentPath = folderDiag.SelectedPath;
+                txtDirectory.Text = currentPath;
 
+                dir = new DirectoryInfo(currentPath);
                 info = dir.GetFiles();
-
-                txtDirectory.Text = folderDiag.SelectedPath;
                 
                 foreach (var item in info)
                 {
@@ -104,6 +106,8 @@ namespace Notes_Forms
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            form = new CreateFile(currentPath);
+            form.Show();
         }
     }
 }
