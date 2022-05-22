@@ -107,7 +107,7 @@ namespace Notes
 
         public void CreateFile(string nm)
         {
-            n = new Note();
+            n = new OldNote();
 
             if (nm == null || nm == "")
             {
@@ -123,7 +123,7 @@ namespace Notes
 
         public void DeleteFile(string nm)
         {
-            n = new Note();
+            n = new OldNote();
 
             if (nm == null || nm == "")
             {
@@ -139,7 +139,7 @@ namespace Notes
 
         public void ModifyFile(string nm)
         {
-            n = new Note();
+            n = new OldNote();
 
             if (nm == null || nm == "")
             {

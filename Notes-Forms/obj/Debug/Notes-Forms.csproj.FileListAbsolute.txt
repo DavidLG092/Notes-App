@@ -1,0 +1,11 @@
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes-Forms.csproj.AssemblyReference.cache
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes-Forms.csproj.SuggestedBindingRedirects.cache
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes_Forms.Notes.resources
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes_Forms.Properties.Resources.resources
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes-Forms.csproj.GenerateResource.cache
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes-Forms.csproj.CoreCompileInputs.cache
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\bin\Debug\Notes-Forms.exe.config
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\bin\Debug\Notes-Forms.exe
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\bin\Debug\Notes-Forms.pdb
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes-Forms.exe
+D:\davi9\Documentos\GitHub\UNINOVE\Notes\Notes-App\Notes-Forms\obj\Debug\Notes-Forms.pdb

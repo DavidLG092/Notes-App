@@ -41,6 +41,7 @@
             this.lblFiles = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
+            this.folderDiag = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -126,6 +127,7 @@
             // 
             // txtFiles
             // 
+            this.txtFiles.Enabled = false;
             this.txtFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiles.Location = new System.Drawing.Point(12, 188);
             this.txtFiles.Multiline = true;
@@ -136,11 +138,13 @@
             // 
             // txtDirectory
             // 
+            this.txtDirectory.Enabled = false;
             this.txtDirectory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDirectory.Location = new System.Drawing.Point(12, 70);
             this.txtDirectory.Name = "txtDirectory";
             this.txtDirectory.Size = new System.Drawing.Size(248, 26);
             this.txtDirectory.TabIndex = 9;
+            this.txtDirectory.TextChanged += new System.EventHandler(this.txtDirectory_TextChanged);
             // 
             // lblFiles
             // 
@@ -172,6 +176,7 @@
             this.btnChange.TabIndex = 12;
             this.btnChange.Text = "Mudar diretório";
             this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // Notes
             // 
@@ -216,6 +221,7 @@
         private System.Windows.Forms.Label lblFiles;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.FolderBrowserDialog folderDiag;
     }
 }
 
