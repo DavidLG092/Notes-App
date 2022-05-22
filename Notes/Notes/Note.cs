@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Notes
 {
@@ -49,11 +50,64 @@ namespace Notes
         public void Modify(string nm)
         {
             string fileText;
+            TextBox tb = new TextBox();
 
             if (File.Exists(nm))
             {
                 fileText = File.ReadAllText(nm);
-                Console.WriteLine(fileText);
+                tb.Text = fileText;
+                tb.Show();
+                Console.ReadLine();
+
+                /*
+                while (!(Console.ReadKey().Key == ConsoleKey.Enter))
+                {
+                    switch (Console.ReadKey().Key)
+                    {
+                        case ConsoleKey.UpArrow:
+                            try
+                            {
+                                Console.CursorTop -= 1;
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.CursorTop = Console.CursorTop;
+                            }
+                            break;
+                        case ConsoleKey.RightArrow:
+                            try
+                            {
+                                Console.CursorLeft -= 1;
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.CursorLeft = Console.CursorLeft;
+                            }
+                            break;
+                        case ConsoleKey.DownArrow:
+                            try
+                            {
+                                Console.CursorTop += 1;
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.CursorTop = Console.CursorTop;
+                            }
+                            break;
+                        case ConsoleKey.LeftArrow:
+                            try
+                            {
+                                Console.CursorLeft += 1;
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.CursorLeft = Console.CursorLeft;
+                            }
+                                break;
+                        case ConsoleKey.Backspace:
+                            break;
+                    }
+                }*/
             }
             else
             {
