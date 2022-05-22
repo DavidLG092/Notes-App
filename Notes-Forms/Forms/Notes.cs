@@ -23,6 +23,7 @@ namespace Notes_Forms
         public Notes()
         {
             InitializeComponent();
+
             mainPath = System.Environment.CurrentDirectory.ToString() + @"\Notes";
             date = System.DateTime.Now.ToString("d").Replace("/", "_");
             currentPath = mainPath + @"\" + date;
@@ -103,7 +104,6 @@ namespace Notes_Forms
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            
         }
     }
 }

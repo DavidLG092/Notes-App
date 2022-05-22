@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\CreateFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateFile.Designer.cs">
+      <DependentUpon>CreateFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Old Classes\Old-Folder.cs" />
     <Compile Include="Forms\Notes.cs">
       <SubType>Form</SubType>
@@ -57,6 +63,9 @@
     <Compile Include="Old Classes\Old-Note.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CreateFile.resx">
+      <DependentUpon>CreateFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Notes.resx">
       <DependentUpon>Notes.cs</DependentUpon>
     </EmbeddedResource>
