@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Notes
 {
-    internal class Folder
+    internal class OldFolder
     {
         // Variáveis de diretório
         private static string mainPath;
@@ -16,10 +16,10 @@ namespace Notes
         private static string date;
 
         // Variáveis de arquivo
-        private Note n;
+        private OldNote n;
         private static string fileName;
 
-        public Folder()
+        public OldFolder()
         {
             mainPath = System.Environment.CurrentDirectory + @"\Notes\";
             currentPath = mainPath;
@@ -42,11 +42,13 @@ namespace Notes
             if (!Directory.Exists(currentPath))
             {
                 Directory.CreateDirectory(currentPath);
-                Console.WriteLine("Sucesso! Diretório {0} foi criado!", currentPath);
+                MessageBox.Show("Sucesso! Diretório \"" + currentPath + "\" foi criado!", "Criar diretório");
+                //Console.WriteLine("Sucesso! Diretório {0} foi criado!", currentPath);
             }
             else
             {
-                Console.WriteLine("Não foi possível criar o diretório desejado, diretório {0} já existe.", currentPath);
+                MessageBox.Show("Não foi possível criar o diretório desejado, diretório \"" + currentPath + "\" já existe.", "Criar diretório");
+                //Console.WriteLine("Não foi possível criar o diretório desejado, diretório {0} já existe.", currentPath);
             }
         }
 
@@ -56,18 +58,21 @@ namespace Notes
             {
                 Directory.Delete(currentPath, true);
                 currentPath = mainPath;
-                Console.WriteLine("Sucesso! Diretório {0} foi deletado.", currentPath);
+                MessageBox.Show("Sucesso! Diretório \"" + currentPath + "\" foi removido.", "Apagar diretório");
+                //Console.WriteLine("Sucesso! Diretório {0} foi deletado.", currentPath);
             }
             else
             {
                 if (Directory.Exists(mainPath + nm))
                 {
                     Directory.Delete(mainPath + nm);
-                    Console.WriteLine("Sucesso! Diretório {0} foi deletado.", mainPath + nm);
+                    MessageBox.Show("Sucesso! Diretório \"" + mainPath + nm + "\" foi removido.", "Apagar diretório");
+                    //Console.WriteLine("Sucesso! Diretório {0} foi deletado.", mainPath + nm);
                 }
                 else
                 {
-                    Console.WriteLine("Diretório {0} não existe, não foi possível deletá-lo.", mainPath + nm);
+                    MessageBox.Show("Diretório \"" + mainPath + nm + "\" não existe, não foi possível removê-lo.", "Apagar diretório");
+                    //Console.WriteLine("Diretório {0} não existe, não foi possível deletá-lo.", mainPath + nm);
                 }
             }
         }
@@ -78,7 +83,7 @@ namespace Notes
 
             if (!Directory.Exists(currentPath))
             {
-                Console.WriteLine("O diretório informado não existe. Garanta que o nome tenha sido digitado corretamente.");
+                //Console.WriteLine("O diretório informado não existe. Garanta que o nome tenha sido digitado corretamente.");
             }
             else
             {

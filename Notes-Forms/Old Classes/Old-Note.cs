@@ -8,18 +8,20 @@ using System.IO;
 
 namespace Notes
 {
-    internal class Note
+    internal class OldNote
     {
         public void Create(string nm)
         {
             if (!File.Exists(nm))
             {
                 File.Create(nm);
-                Console.WriteLine("Sucesso! O arquivo {0} foi criado!", nm);
+                MessageBox.Show("Sucesso! O arquivo \"" + nm + "\" foi criado!", "Apagar arquivo");
+                //Console.WriteLine("Sucesso! O arquivo {0} foi criado!", nm);
             }
             else
             {
-                Console.WriteLine("Um arquivo com esse nome já existe no diretório indicado!");
+                MessageBox.Show("Um arquivo com esse nome já existe no diretório indicado!");
+                //Console.WriteLine("Um arquivo com esse nome já existe no diretório indicado!");
             }
         }
 
@@ -27,23 +29,29 @@ namespace Notes
         {
             if (File.Exists(nm))
             {
-                Console.WriteLine("Você deseja apagar o arquivo {0}.", nm);
-                Console.Write("Tem certeza? (Y/N)\n> ");
-                var conf = Console.ReadLine();
+                MessageBoxButtons btn = MessageBoxButtons.YesNo;
+                DialogResult conf = MessageBox.Show("Você deseja apagar o arquivo " + nm + ".\nTem certeza?", "Apagar arquivo", btn);
 
-                if ((conf.ToLower().Equals("y")))
+                /*Console.WriteLine("Você deseja apagar o arquivo {0}.", nm);
+                Console.Write("Tem certeza? (Y/N)\n> ");
+                var conf = Console.ReadLine();*/
+
+                if (conf == DialogResult.Yes)
                 {
                     File.Delete(nm);
-                    Console.WriteLine("Sucesso! O arquivo {1} foi removido!", nm);
+                    MessageBox.Show("Sucesso! O arquivo " + nm + " foi removido!", "Apagar arquivo");
+                    //Console.WriteLine("Sucesso! O arquivo {1} foi removido!", nm);
                 }
                 else
                 {
-                    Console.WriteLine("Nenhum arquivo foi apagado!");
+                    MessageBox.Show("Nenhum arquivo foi apagado!", "Apagar arquivo");
+                    //Console.WriteLine("Nenhum arquivo foi apagado!");
                 }
             }
             else
             {
-                Console.WriteLine("Não existe nenhum arquivo {0} localizado neste diretório", nm);
+                MessageBox.Show("Não existe nenhum arquivo \"" + nm + "\" localizado neste diretório", "Apagar arquivo");
+                //Console.WriteLine("Não existe nenhum arquivo {0} localizado neste diretório", nm);
             }
         }
 
@@ -111,7 +119,8 @@ namespace Notes
             }
             else
             {
-                Console.WriteLine("Não existe nenhum arquivo {0} localizado neste diretório", nm);
+                MessageBox.Show("Não existe nenhum arquivo \"" + nm + "\" localizado neste diretório", "Apagar arquivo");
+                //Console.WriteLine("Não existe nenhum arquivo {0} localizado neste diretório", nm);
             }
         }
     }
