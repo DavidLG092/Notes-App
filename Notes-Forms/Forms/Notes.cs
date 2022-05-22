@@ -16,5 +16,40 @@ namespace Notes_Forms
         {
             InitializeComponent();
         }
+
+        private void Notes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFiles_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFiles_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblContent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtContent_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
