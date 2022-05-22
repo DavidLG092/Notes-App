@@ -14,14 +14,33 @@ namespace Notes_Forms
     public partial class Notes : Form
     {
 
-        private static string path;
+        private static string mainPath;
+        private static string currentPath;
+        private static string date;
         private static DirectoryInfo dir;
         private static FileInfo[] info;
 
         public Notes()
         {
             InitializeComponent();
-            path = System.Environment.CurrentDirectory.ToString();
+            mainPath = System.Environment.CurrentDirectory.ToString() + @"\Notes";
+            date = System.DateTime.Now.ToString("d").Replace("/", "_");
+            currentPath = mainPath + @"\" + date;
+
+            if (!Directory.Exists(mainPath))
+            {
+                Directory.CreateDirectory(mainPath);
+                Directory.CreateDirectory(currentPath);
+            }
+            else
+            {
+                if (!Directory.Exists(currentPath))
+                {
+                    Directory.CreateDirectory(currentPath);
+                }
+            }
+
+            txtDirectory.Text = currentPath;
         }
 
         private void Notes_Load(object sender, EventArgs e)
@@ -80,6 +99,11 @@ namespace Notes_Forms
         private void txtDirectory_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -166,6 +166,7 @@
             this.btnCreate.TabIndex = 11;
             this.btnCreate.Text = "Criar arquivo";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnChange
             // 
