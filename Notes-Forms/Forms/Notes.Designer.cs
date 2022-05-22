@@ -30,7 +30,7 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtContent = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFile = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblContent = new System.Windows.Forms.Label();
             this.lblDirectory = new System.Windows.Forms.Label();
@@ -42,6 +42,8 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.folderDiag = new System.Windows.Forms.FolderBrowserDialog();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -64,13 +66,13 @@
             this.txtContent.TabIndex = 1;
             this.txtContent.TextChanged += new System.EventHandler(this.txtContent_TextChanged);
             // 
-            // textBox1
+            // txtFile
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(313, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(516, 26);
-            this.textBox1.TabIndex = 2;
+            this.txtFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFile.Location = new System.Drawing.Point(313, 116);
+            this.txtFile.Name = "txtFile";
+            this.txtFile.Size = new System.Drawing.Size(516, 26);
+            this.txtFile.TabIndex = 2;
             // 
             // lblName
             // 
@@ -159,10 +161,10 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.Location = new System.Drawing.Point(12, 488);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(248, 38);
+            this.btnCreate.Size = new System.Drawing.Size(120, 38);
             this.btnCreate.TabIndex = 11;
             this.btnCreate.Text = "Criar arquivo";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -179,6 +181,28 @@
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(312, 147);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(248, 38);
+            this.btnEdit.TabIndex = 13;
+            this.btnEdit.Text = "Editar arquivo";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(140, 487);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(120, 38);
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "Atualizar lista";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // Notes
             // 
             this.AllowDrop = true;
@@ -186,6 +210,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.ClientSize = new System.Drawing.Size(841, 537);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.lblFiles);
@@ -196,7 +222,7 @@
             this.Controls.Add(this.lblDirectory);
             this.Controls.Add(this.lblContent);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFile);
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.lblTitle);
             this.Name = "Notes";
@@ -211,7 +237,7 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtContent;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFile;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblContent;
         private System.Windows.Forms.Label lblDirectory;
@@ -223,6 +249,8 @@
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.FolderBrowserDialog folderDiag;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

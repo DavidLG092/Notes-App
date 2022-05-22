@@ -22,6 +22,8 @@ namespace Notes_Forms
         private static DirectoryInfo dir;
         private static FileInfo[] info;
 
+        private static string file;
+
         public Notes()
         {
             InitializeComponent();
@@ -43,7 +45,22 @@ namespace Notes_Forms
                 }
             }
 
+            UpdateDirInfo();
+        }
+
+        private void UpdateDirInfo()
+        {
             txtDirectory.Text = currentPath;
+            txtFiles.Text = "";
+
+            dir = new DirectoryInfo(currentPath);
+            info = dir.GetFiles();
+
+            foreach (var item in info)
+            {
+                txtFiles.Text += item.Name;
+                txtFiles.Text += Environment.NewLine;
+            }
         }
 
         private void Notes_Load(object sender, EventArgs e)
@@ -63,12 +80,31 @@ namespace Notes_Forms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                File.Delete(file);
+                file = "";
+                txtFile.Text = "";
+                txtContent.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Algo de errado occorreu.\nTenha certeza de que um novo arquivo foi selecionado.", "Apagar arquivo");
+            }
 
+            UpdateDirInfo();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                File.WriteAllText(file, txtContent.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Algo de errado occorreu.\nTenha certeza de que um novo arquivo foi selecionado.", "Editar arquivo");
+            }
         }
 
         private void lblContent_Click(object sender, EventArgs e)
@@ -86,16 +122,8 @@ namespace Notes_Forms
             if (folderDiag.ShowDialog() == DialogResult.OK)
             {
                 currentPath = folderDiag.SelectedPath;
-                txtDirectory.Text = currentPath;
 
-                dir = new DirectoryInfo(currentPath);
-                info = dir.GetFiles();
-                
-                foreach (var item in info)
-                {
-                    txtFiles.Text += item.Name;
-                    txtFiles.Text += Environment.NewLine;
-                }
+                UpdateDirInfo();
             }
         }
 
@@ -108,6 +136,28 @@ namespace Notes_Forms
         {
             form = new CreateFile(currentPath);
             form.Show();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            string content;
+
+            file = currentPath + @"\" + txtFile.Text + ".txt";
+
+            if (File.Exists(file))
+            {
+                content = File.ReadAllText(file);
+                txtContent.Text = content;
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível editar o arquivo, pois o arquivo especificado não existe!", "Edição de arquivo");
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateDirInfo();
         }
     }
 }
