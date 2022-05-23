@@ -58,7 +58,7 @@ namespace Notes_Forms
 
             foreach (var item in info)
             {
-                txtFiles.Text += item.Name;
+                txtFiles.Text += (item.Name).Remove((item.Name).IndexOf("."));
                 txtFiles.Text += Environment.NewLine;
             }
         }

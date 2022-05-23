@@ -32,8 +32,9 @@ namespace Notes_Forms.Forms
 
             if (!File.Exists(fullName))
             {
-                File.Create(fullName);
+                FileStream fs = File.Create(fullName);
                 MessageBox.Show("Sucesso! Arquivo \"" + txtFileName.Text + "\" foi criado!", "Criação de arquivo");
+                fs.Close();
                 Close();
             }
             else
